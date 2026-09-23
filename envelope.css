@@ -33,7 +33,23 @@
   filter: grayscale(1) contrast(0.9) brightness(0.86);
   transform: translateX(28vw) scale(1.58);
   transition: filter 900ms ease, transform 1100ms cubic-bezier(0.22, 0.61, 0.36, 1);
+  animation: backdrop-drift 18s ease-in-out infinite alternate;
 }
+
+/* медленное дыхание кадра за конвертом */
+@keyframes backdrop-drift {
+  from { transform: translateX(28vw) scale(1.58); }
+  to { transform: translateX(18vw) scale(2.15); }
+}
+
+@keyframes backdrop-drift-phone {
+  from { transform: translate(-4vw, -22vh) scale(1.42); }
+  to { transform: translate(-11vw, -30vh) scale(1.92); }
+}
+
+/* на время ухода конверта движение останавливаем, чтобы сработал переход */
+.envelope-gate.is-opening .envelope-backdrop,
+.envelope-gate.is-leaving .envelope-backdrop { animation: none; }
 
 .envelope-backdrop-shade {
   z-index: -1;
@@ -54,8 +70,34 @@
   outline: 0;
   cursor: pointer;
   transform: translateY(-1.5vh);
-  transition: transform 900ms cubic-bezier(0.22, 0.61, 0.36, 1), opacity 300ms ease 640ms;
+  transition: transform 520ms cubic-bezier(0.22, 0.61, 0.36, 1), opacity 300ms ease 640ms;
 }
+
+/* отклик на наведение и нажатие */
+.envelope-still {
+  transition: filter 520ms ease;
+}
+
+@media (hover: hover) {
+  .envelope-gate:not(.is-opening) .envelope-object:hover {
+    transform: translateY(-2.6vh) scale(1.015);
+  }
+
+  .envelope-gate:not(.is-opening) .envelope-object:hover .envelope-still {
+    filter: drop-shadow(0 40px 34px rgba(21, 18, 15, 0.38));
+  }
+}
+
+.envelope-gate:not(.is-opening) .envelope-object:active {
+  transform: translateY(-1vh) scale(0.985);
+  transition-duration: 140ms;
+}
+
+.envelope-gate:not(.is-opening) .envelope-object:active .envelope-still {
+  filter: drop-shadow(0 18px 18px rgba(21, 18, 15, 0.34));
+  transition-duration: 140ms;
+}
+
 
 .envelope-object:disabled {
   cursor: default;
@@ -89,27 +131,31 @@
 }
 
 .envelope-live-copy strong {
-  font-family: "Pinyon Envelope", cursive;
-  font-size: clamp(48px, 5.5vh, 68px);
-  font-style: normal;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(24px, 3.7vh, 35px);
+  font-style: italic;
   font-weight: 400;
-  line-height: 0.96;
-  letter-spacing: -0.045em;
-  -webkit-text-stroke: 0.2px rgba(38, 33, 28, 0.44);
+  line-height: 1;
+  letter-spacing: 0.01em;
+  color: #c6bdab;
   text-shadow:
-    0 -1px 0 rgba(36, 30, 24, 0.38),
-    0 1.25px 0 rgba(255, 254, 248, 0.97),
-    0 2.3px 1.2px rgba(255, 254, 248, 0.62),
-    0 -2px 1px rgba(41, 34, 27, 0.16);
+    0 -1px 0 rgba(58, 48, 38, 0.72),
+    0 1px 0 rgba(255, 255, 252, 1),
+    0 2px 1.5px rgba(255, 255, 252, 0.45);
   white-space: nowrap;
 }
 
 .envelope-live-copy time {
-  margin-top: clamp(13px, 1.8vh, 20px);
-  font-family: var(--display);
-  font-size: clamp(10px, 1.18vh, 14px);
-  letter-spacing: 0.18em;
-  text-shadow: 0 -0.7px 0 rgba(37, 31, 26, 0.38), 0 1px 0 rgba(255, 254, 249, 0.95), 0 1.8px 1px rgba(255, 254, 249, 0.5);
+  margin-top: clamp(12px, 1.7vh, 18px);
+  font-family: var(--ui);
+  font-size: clamp(10px, 1.3vh, 12px);
+  font-weight: 500;
+  letter-spacing: 0.34em;
+  color: #c6bdab;
+  text-shadow:
+    0 -1px 0 rgba(58, 48, 38, 0.7),
+    0 1px 0 rgba(255, 255, 252, 1),
+    0 2px 1.5px rgba(255, 255, 252, 0.4);
   text-transform: uppercase;
 }
 
@@ -194,6 +240,7 @@
     object-position: 52% 42%;
     filter: grayscale(1) contrast(0.88) brightness(0.82);
     transform: translate(-4vw, -22vh) scale(1.42);
+    animation: backdrop-drift-phone 18s ease-in-out infinite alternate;
   }
 
   .envelope-object {
