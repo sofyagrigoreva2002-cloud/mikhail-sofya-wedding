@@ -1,4 +1,4 @@
-/* ===== Цвет вместо чёрно-белого: снято обесцвечивание, контраст и яркость сохранены ===== */
+/* ===== Цвет вместо чёрно-белого ===== */
 .fashion-hero-media{filter:grayscale(0) contrast(0.92) brightness(0.7)}
 .invitation-photo img{filter:grayscale(0) contrast(0.93) brightness(0.96)}
 .countdown-editorial > img{filter:grayscale(0) contrast(0.92) brightness(0.69)}
@@ -22,41 +22,19 @@
   .envelope-backdrop{filter:grayscale(0) contrast(0.88) brightness(0.82)}
 }
 
-/* ===== Письмо: картон во весь экран, сплошной текст, подпись в углу ===== */
-.letter-scene .scene__photo,
-.letter-scene .scene__veil{display:none !important}
-.letter-scene{
-  --sheet-w:auto !important;
-  grid-template-columns:1fr !important;
-  grid-template-rows:1fr !important;
-  padding:0 !important;
-  background-color:#d3cdc1;
-  background-image:url("images/paper-cardstock-v48.jpg");
-  background-size:340px;
-}
-.letter-scene .sheet{
-  grid-column:1 !important;grid-row:1 !important;
-  background:none !important;box-shadow:none !important;animation:none !important;
-  padding:0 clamp(26px,7vw,40px) !important;
-  align-content:center;
-  grid-template-columns:minmax(0,1fr) !important;
-}
-.letter-scene .sheet__title{
-  position:absolute !important;width:1px;height:1px;
-  overflow:hidden;clip-path:inset(50%);white-space:nowrap;
-}
-.letter-scene .sheet__rule,
-.letter-scene .sheet__signrule,
-.letter-scene .rail{display:none !important}
+/* ===== Письмо ===== */
+.letter-scene .scene__photo,.letter-scene .scene__veil{display:none !important}
+.letter-scene{--sheet-w:auto !important;grid-template-columns:1fr !important;grid-template-rows:1fr !important;
+  padding:0 !important;background-color:#d3cdc1;background-image:url("images/paper-cardstock-v48.jpg");background-size:340px}
+.letter-scene .sheet{grid-column:1 !important;grid-row:1 !important;background:none !important;box-shadow:none !important;
+  animation:none !important;padding:0 clamp(26px,7vw,40px) !important;align-content:center;grid-template-columns:minmax(0,1fr) !important}
+.letter-scene .sheet__title{position:absolute !important;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.letter-scene .sheet__rule,.letter-scene .sheet__signrule,.letter-scene .rail{display:none !important}
 .letter-scene .sheet__col{justify-content:center;height:100%}
-.letter-scene .sheet__foot{
-  margin:clamp(10px,2.6vw,16px) 0 0 !important;padding:0 !important;text-align:right;
-}
-.letter-scene .sheet__from{
-  width:fit-content !important;margin-left:auto !important;
-  white-space:nowrap !important;text-align:right;
-}
+.letter-scene .sheet__foot{margin:clamp(10px,2.6vw,16px) 0 0 !important;padding:0 !important;text-align:right}
+.letter-scene .sheet__from{width:fit-content !important;margin-left:auto !important;white-space:nowrap !important;text-align:right}
 
+/* ===== program-embed.css ===== */
 /* Шрифты объявляем сами: сайт даёт Montserrat только одним начертанием,
    и вес 300 подменялся на 400 — буквы шире, строка расписания не помещалась. */
 @font-face{font-family:"MPMont";src:url("fonts/montserrat-v18.ttf") format("truetype");font-weight:100 900;font-display:swap}
@@ -78,7 +56,7 @@
 
 .mock-program .mp-page{position:relative;z-index:1;min-height:100svh;display:flex;flex-direction:column;
   justify-content:space-between;align-items:center;text-align:center;
-  padding:clamp(54px,8.6svh,82px) clamp(24px,6.4vw,36px) clamp(48px,8svh,76px);
+  padding:clamp(54px,8.6svh,82px) clamp(24px,6.4vw,36px) clamp(26px,3.8svh,36px);
   color:#fbf9f5;text-shadow:0 1px 12px rgba(6,5,4,.92), 0 1px 3px rgba(6,5,4,.8)}
 .mock-program .mp-top,.mock-program .mp-bottom{width:100%}
 .mock-program .mp-top{text-align:left}
@@ -108,14 +86,22 @@
 .mock-program .mp-manor{display:block;width:clamp(120px,32vw,152px);height:auto;
   margin:clamp(20px,5vw,28px) auto 0;opacity:.6}
 
+/* подпись над названием площадки — тем же набором, что адрес */
+.mock-program .mp-label{margin:0;font-family:"MPMont",Arial,sans-serif;font-weight:300;font-size:12.5px;
+  letter-spacing:.15em;text-transform:uppercase;line-height:1.6}
+.mock-program .mp-dash{margin:clamp(4px,1vw,6px) 0 clamp(6px,1.6vw,10px);font-family:"MPMont",Arial,sans-serif;
+  font-weight:300;font-size:12.5px;line-height:1}
+
+/* ===== details-embed.css ===== */
 /* Экран «важные детали» — ступенями. Накладывается на раздел сайта. */
 @font-face{font-family:"MDMont";src:url("fonts/montserrat-v18.ttf") format("truetype");font-weight:100 900;font-display:swap}
 @font-face{font-family:"MDHand";src:url("fonts/bikham-cyr-user-preview.ttf") format("truetype");font-weight:400;font-display:swap}
 
 .mock-details{
-  position:relative;min-height:100svh;overflow:hidden;display:flex;flex-direction:column;
-  justify-content:center;gap:clamp(30px,7.2vw,44px);
-  padding:clamp(58px,9.6svh,88px) clamp(26px,7vw,38px);
+  /* не на весь экран и без центровки: дресс-код начинается сразу после программы */
+  position:relative;min-height:0;overflow:hidden;display:flex;flex-direction:column;
+  justify-content:flex-start;gap:clamp(30px,7.2vw,44px);
+  padding:clamp(36px,5svh,48px) clamp(26px,7vw,38px) clamp(58px,9.6svh,88px);
   background:#0d0c0b;color:#fbf9f5}
 .mock-details .step{max-width:290px}
 .mock-details .step:nth-of-type(2){margin-left:auto;text-align:right}
@@ -130,3 +116,62 @@
 .mock-details .t1{background:#121211}.mock-details .t2{background:#4a4a47}
 .mock-details .t3{background:#4b382f}.mock-details .t4{background:#8a7a6c}
 .mock-details .t5{background:#c7b299}
+
+/* ===== rsvp-embed.css ===== */
+/* Анкета: короткий блок с кнопкой на Google-форму, не на весь экран */
+@font-face{font-family:"MRMont";src:url("fonts/montserrat-v18.ttf") format("truetype");font-weight:100 900;font-display:swap}
+
+.mock-rsvp{
+  position:relative;display:block;min-height:0;
+  padding:clamp(36px,5.6vh,52px) clamp(24px,6.4vw,36px) clamp(40px,6.2vh,58px);
+  background-color:#d3cdc1;background-image:url("images/paper-cardstock-v48.jpg");background-size:340px;
+  color:#4d4842;font-family:"MRMont",Arial,sans-serif}
+.mock-rsvp h2{margin:0 0 12px;font-family:"MRMont",Arial,sans-serif;font-weight:300;
+  font-size:clamp(26px,7.8vw,34px);line-height:1.1;letter-spacing:-.035em;white-space:nowrap;color:#4d4842}
+.mock-rsvp p{margin:0;font-size:15px;line-height:1.6;color:#857d73;max-width:330px}
+.mock-rsvp .go{display:inline-flex;align-items:center;gap:10px;margin-top:24px;min-height:48px;padding:0 26px;
+  background:#4d4842;color:#f6f3ed;border-radius:6px;text-decoration:none;font-size:14px;font-weight:500;letter-spacing:.04em}
+.mock-rsvp .hint{margin-top:12px;font-size:12px}
+
+/* ===== closing-embed.css ===== */
+/* Финал: короче, небо срезано, контакт слева рядом с головами, без линии сверху */
+.mock-closing.closing-editorial{min-height:0;height:clamp(470px,62svh,560px)}
+.mock-closing.closing-editorial > img{
+  animation:none !important;
+  object-position:62% 100%;
+  /* приближаем вокруг голов: они остаются на месте, небо уходит за верхний край */
+  transform:scale(1.75);
+  transform-origin:63% 50%;
+}
+.mock-closing .closing-shade{
+  background:linear-gradient(90deg, rgba(0,0,0,.78) 0%, rgba(0,0,0,.42) 46%, rgba(0,0,0,.06) 78%) !important}
+.mock-closing .closing-copy{
+  position:absolute;left:0;right:0;top:0;min-height:0 !important;width:auto;display:block;
+  padding:clamp(30px,4.6svh,40px) var(--pad,24px) 0 !important}
+.mock-closing .closing-contact{border-top:0 !important;padding-top:0 !important;max-width:none !important;
+  font-size:14px !important;line-height:1.5}
+.mock-closing .closing-contact > p:first-child{max-width:none;margin:0}
+/* имя спускаем к уровню голов на кадре */
+.mock-closing .closing-contact .organizer-name{margin-top:clamp(40px,5.6svh,52px) !important}
+/* номер и Telegram столбиком, без подчёркиваний; стрелка показывает, что это ссылка */
+.mock-closing .closing-contact .links{display:flex;flex-direction:column;align-items:flex-start;gap:2px;margin-top:6px}
+.mock-closing .closing-contact .links a{display:inline-flex;min-height:36px;align-items:center;gap:8px;
+  border:0 !important;font-size:14px;letter-spacing:.06em;text-decoration:none;color:inherit}
+.mock-closing .closing-contact .links .tg .arr{transition:transform .2s}
+.mock-closing .closing-contact .links .tg:hover .arr{transform:translateX(3px)}
+
+/* подвал ниже и компактнее, ссылки без подчёркиваний */
+.mock-closing .editorial-footer{min-height:0 !important;padding:2px var(--pad,24px) 4px !important;row-gap:0 !important;
+  background:rgba(0,0,0,.6)}
+.mock-closing .editorial-footer button,
+.mock-closing .editorial-footer a{border-bottom:0 !important;min-height:34px}
+
+/* ===== envelope-embed.css ===== */
+/* Конверт: дата крупнее и ниже, без подчёркивания у кнопки */
+.envelope-live-copy time{
+  margin-top:clamp(20px,2.8vh,28px) !important;
+  font-size:clamp(14px,1.9vh,17px) !important;
+  letter-spacing:.26em !important;
+  color:#bcb2a0 !important;
+  text-shadow:0 -1px 0 rgba(58,48,38,.82),0 1px 0 rgba(255,255,252,1),0 2px 1.5px rgba(255,255,252,.4) !important}
+.envelope-action{border-bottom:0 !important}

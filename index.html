@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="envelope.css?v=41">
   <script>if(new URLSearchParams(location.search).has('zags'))document.documentElement.dataset.mode='zags';</script>
   <noscript><style>.envelope-gate{display:none!important}.site-shell{visibility:visible!important}[data-reveal]{opacity:1!important}</style></noscript>
-  <link rel="stylesheet" href="final.css?v=1">
+  <link rel="stylesheet" href="final.css?v=2">
   </head>
 <body>
   <div class="envelope-gate" id="envelope" role="dialog" aria-modal="true" aria-label="Свадебное приглашение Михаила и Софьи">
@@ -84,111 +84,62 @@
       
 
       <section class="mock-program" id="day" aria-labelledby="day-title">
-      <div class="mp-bg">
-        <img src="фотосессия-предложение/город/diana starry-0030.jpg" alt="" loading="lazy">
-        <div class="mp-veil"></div>
+    <div class="mp-bg">
+      <img src="фотосессия-предложение/город/diana starry-0030.jpg" alt="">
+      <div class="mp-veil"></div>
+    </div>
+    <div class="mp-page">
+      <div class="mp-top">
+        <h2 class="mp-title" id="day-title">Программа <span class="tail">дня</span></h2>
+        <ol class="mp-sched">
+          <li><i>15.30</i>Сбор гостей</li>
+          <li><i>16.00</i>Выездная церемония</li>
+          <li><i>16.30</i>Начало праздничного ужина</li>
+          <li><i>20.00</i>Вынос свадебного торта</li>
+          <li><i>23.00</i>Завершение вечера</li>
+        </ol>
       </div>
-      <div class="mp-page">
-        <div class="mp-top">
-          <h2 class="mp-title" id="day-title">Программа <span class="tail">дня</span></h2>
-          <ol class="mp-sched">
-            <li><i>15.30</i>Сбор гостей</li>
-            <li><i>16.00</i>Выездная церемония</li>
-            <li><i>16.30</i>Начало праздничного ужина</li>
-            <li><i>20.00</i>Вынос свадебного торта</li>
-            <li><i>23.00</i>Завершение вечера</li>
-          </ol>
-        </div>
-        <div class="mp-bottom">
-          <p class="mp-name">Особняк Путилова</p>
-          <p class="mp-addr">проспект Динамо, 2Б</p>
-          <a class="mp-link" href="https://yandex.ru/maps/?text=Санкт-Петербург, проспект Динамо, 2Б, особняк Путилова" target="_blank" rel="noopener">Открыть в картах</a>
-          <img class="mp-manor" src="images/putilov-lines-v49.png" alt="Особняк Путилова, зарисовка" loading="lazy">
-        </div>
+      <div class="mp-bottom">
+        <p class="mp-label">Место проведения торжества</p>
+        <p class="mp-name">Особняк Путилова</p>
+        <p class="mp-addr">проспект Динамо, 2Б</p>
+        <a class="mp-link" href="https://yandex.ru/maps/?text=Санкт-Петербург, проспект Динамо, 2Б, особняк Путилова" target="_blank" rel="noopener">Открыть в картах</a>
+        <img class="mp-manor" src="images/putilov-lines-v49.png" alt="Особняк Путилова, зарисовка">
       </div>
-    </section>
-
-      <section class="mock-details" aria-labelledby="details-title">
-      <article class="step">
-        <h3 id="details-title">Дресс-код</h3>
-        <p>Элегантный вечерний стиль. Для мужчин тёмный костюм или пиджак с брюками и рубашкой, галстук или бабочка по желанию. Для женщин вечернее или коктейльное платье</p>
-        <div class="tones"><span class="t1"></span><span class="t2"></span><span class="t3"></span><span class="t4"></span><span class="t5"></span></div>
-      </article>
-      <article class="step">
-        <h3>Вечер для взрослых</h3>
-        <p>Праздник пройдёт в формате 18+ — мы хотим, чтобы вы смогли полностью погрузиться в атмосферу вечера</p>
-      </article>
-      <article class="step">
-        <h3>О подарках и цветах</h3>
-        <p>Если вы захотите сделать нам подарок, будем благодарны за вклад в наш семейный бюджет. А вместо букета нам будет особенно приятно получить цветочную подписку — так цветы будут радовать нас ещё долго после праздника</p>
-      </article>
-    </section>
-
-      <section class="reply-editorial reply-editorial--letter" id="rsvp" aria-labelledby="rsvp-title">
-        <div class="reply-photo" data-reveal>
-          <img src="фотосессия-предложение/город/diana starry-0028.jpg" alt="Михаил и Софья на балконе" width="1707" height="2560" loading="lazy">
-          <div class="reply-photo-copy">
-            <p>Михаил и Софья · 15 января 2027</p>
-            <h2 id="rsvp-title">Будете ли вы<br><em>с нами?</em></h2>
-          </div>
-        </div>
-        <div class="reply-content">
-          <header data-reveal>
-            <p class="section-number">Подтверждение присутствия</p>
-            <p>Пожалуйста, ответьте до 25 декабря — нам важно спланировать вечер</p>
-          </header>
-          <div class="reply-form" data-reveal>
-            <form class="form" id="rsvp-form" novalidate>
-              <div class="field">
-                <label class="label" for="name">Ваше имя и фамилия</label>
-                <input class="input" type="text" id="name" name="name" placeholder="Как вас записать" autocomplete="name" required>
-              </div>
-              <fieldset class="field">
-                <legend class="label">Сможете ли вы присутствовать на торжестве?</legend>
-                <div class="options">
-                  <label class="option"><input type="radio" name="attending" value="Обязательно приду" required><span>Обязательно приду</span></label>
-                  <label class="option"><input type="radio" name="attending" value="К сожалению, не смогу"><span>К сожалению, не смогу</span></label>
-                </div>
-              </fieldset>
-              <div id="details-block" class="hidden" hidden>
-                <fieldset class="field">
-                  <legend class="label">Что предпочитаете из напитков?</legend>
-                  <div class="options options--many">
-                    <label class="option"><input type="checkbox" name="drinks" value="Вино"><span>Вино</span></label>
-                    <label class="option"><input type="checkbox" name="drinks" value="Игристое"><span>Игристое</span></label>
-                    <label class="option"><input type="checkbox" name="drinks" value="Водка"><span>Водка</span></label>
-                    <label class="option"><input type="checkbox" name="drinks" value="Виски"><span>Виски</span></label>
-                    <label class="option"><input type="checkbox" name="drinks" value="Коктейли"><span>Коктейли</span></label>
-                  </div>
-                </fieldset>
-                <fieldset class="field">
-                  <legend class="label">Предпочтение по горячему</legend>
-                  <div class="options">
-                    <label class="option"><input type="radio" name="main" value="Рыба"><span>Рыба</span></label>
-                    <label class="option"><input type="radio" name="main" value="Мясо"><span>Мясо</span></label>
-                  </div>
-                </fieldset>
-                <div class="field">
-                  <label class="label" for="allergy">Есть ли у вас пищевая аллергия? Если есть, то на что</label>
-                  <input class="input" type="text" id="allergy" name="allergy" placeholder="Аллергии нет">
-                </div>
-              </div>
-              <button class="submit" type="submit"><span>Отправить ответ</span><span aria-hidden="true">↗</span></button>
-              <p class="form-message" id="form-msg" role="status" aria-live="polite"></p>
-            </form>
-            <div class="thanks hidden" id="thanks" role="status" hidden><p>Спасибо! Мы получили ваш ответ и очень ждём встречи</p></div>
-          </div>
-        </div>
+    </div>
       </section>
 
-      <section class="closing-editorial" aria-label="Контакты организатора">
+      <section class="mock-details" aria-labelledby="details-title">
+    <article class="step">
+      <h3 id="details-title">Дресс-код</h3>
+      <p>Элегантный вечерний стиль. Для мужчин тёмный костюм или пиджак с брюками и рубашкой, галстук или бабочка по желанию. Для женщин вечернее или коктейльное платье</p>
+      <div class="tones"><span class="t1"></span><span class="t2"></span><span class="t3"></span><span class="t4"></span><span class="t5"></span></div>
+    </article>
+    <article class="step">
+      <h3>Вечер для взрослых</h3>
+      <p>Праздник пройдёт в формате 18+ — мы хотим, чтобы вы смогли полностью погрузиться в атмосферу вечера</p>
+    </article>
+    <article class="step">
+      <h3>О подарках и цветах</h3>
+      <p>Если вы захотите сделать нам подарок, будем благодарны за вклад в наш семейный бюджет. А вместо букета нам будет особенно приятно получить цветочную подписку — так цветы будут радовать нас ещё долго после праздника</p>
+    </article>
+      </section>
+
+      <section class="mock-rsvp" id="rsvp" aria-labelledby="rsvp-title">
+    <h2 id="rsvp-title">Будете ли вы с нами?</h2>
+    <p>Пожалуйста, ответьте до 25 декабря — нам важно спланировать вечер</p>
+    <a class="go" href="https://docs.google.com/forms/d/e/1FAIpQLSdp6Pcx8MnCEJKQ5-hmaVLhwbYs9tH2nUkPzJ9cgYarxLJWHg/viewform" target="_blank" rel="noopener">Заполнить анкету <span aria-hidden="true">↗</span></a>
+    <p class="hint">Анкета откроется в Google Формах — это займёт минуту</p>
+      </section>
+
+      <section class="closing-editorial mock-closing" aria-label="Контакты организатора">
         <img src="images/story-night-v6.jpg" alt="Михаил и Софья на вечернем балконе в Санкт-Петербурге" width="1707" height="2560" loading="lazy">
         <div class="closing-shade" aria-hidden="true"></div>
         <div class="closing-copy" data-reveal>
           <div class="closing-contact">
             <p>По всем вопросам, связанным с мероприятием, вы можете связаться с нашим организатором</p>
             <p class="organizer-name">Натали</p>
-            <a href="tel:+79676250267">+7 967 625-02-67</a>
+            <div class="links"><a href="tel:+79676250267">+7 967 625-02-67</a><a class="tg" href="https://t.me/+79676250267" target="_blank" rel="noopener">Telegram <span class="arr" aria-hidden="true">→</span></a></div>
           </div>
         </div>
         <footer class="editorial-footer">
