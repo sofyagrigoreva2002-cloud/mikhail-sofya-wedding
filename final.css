@@ -157,8 +157,8 @@
 .mock-closing .closing-contact .links{display:flex;flex-direction:column;align-items:flex-start;gap:2px;margin-top:6px}
 .mock-closing .closing-contact .links a{display:inline-flex;min-height:36px;align-items:center;gap:8px;
   border:0 !important;font-size:14px;letter-spacing:.06em;text-decoration:none;color:inherit}
-.mock-closing .closing-contact .links .tg .arr{transition:transform .2s}
-.mock-closing .closing-contact .links .tg:hover .arr{transform:translateX(3px)}
+.mock-closing .closing-contact .links .tg .arr{display:inline-block;font-size:1.35em;line-height:1;transform:translateY(-1px);transition:transform .2s}
+.mock-closing .closing-contact .links .tg:hover .arr{transform:translate(2px,-3px)}
 
 /* подвал ниже и компактнее, ссылки без подчёркиваний */
 .mock-closing .editorial-footer{min-height:0 !important;padding:2px var(--pad,24px) 4px !important;row-gap:0 !important;
@@ -175,3 +175,8 @@
   color:#bcb2a0 !important;
   text-shadow:0 -1px 0 rgba(58,48,38,.82),0 1px 0 rgba(255,255,252,1),0 2px 1.5px rgba(255,255,252,.4) !important}
 .envelope-action{border-bottom:0 !important}
+
+/* iPhone сам превращает «Save the date · 15 · 01 · 2027» в ссылку на календарь и подчёркивает её */
+.envelope-live-copy,.envelope-live-copy *{text-decoration:none !important}
+a[x-apple-data-detectors]{color:inherit !important;text-decoration:none !important;
+  font:inherit !important;border:0 !important;pointer-events:none}
