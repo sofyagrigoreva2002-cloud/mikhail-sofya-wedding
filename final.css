@@ -92,6 +92,11 @@
 .mock-program .mp-dash{margin:clamp(4px,1vw,6px) 0 clamp(6px,1.6vw,10px);font-family:"MPMont",Arial,sans-serif;
   font-weight:300;font-size:12.5px;line-height:1}
 
+/* адрес ЗАГСа — мелкой строкой под пунктом, ссылкой на карты */
+.mock-program .mp-sched .mp-ev{display:inline-block;vertical-align:top}
+.mock-program .mp-sched .mp-where{display:block;width:fit-content;margin:1px 0 4px;
+  font-size:10.5px;letter-spacing:.14em;opacity:.72;color:inherit;text-decoration:none}
+
 /* ===== details-embed.css ===== */
 /* Экран «важные детали» — ступенями. Накладывается на раздел сайта. */
 @font-face{font-family:"MDMont";src:url("fonts/montserrat-v18.ttf") format("truetype");font-weight:100 900;font-display:swap}
