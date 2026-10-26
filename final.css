@@ -122,6 +122,9 @@
 .mock-details .t3{background:#4b382f}.mock-details .t4{background:#8a7a6c}
 .mock-details .t5{background:#c7b299}
 
+/* приписка про обувь под палитрой: отделена воздухом, чтобы не слиться с описанием образа */
+.mock-details .step .note{margin-top:clamp(14px,3.4vw,18px)}
+
 /* ===== rsvp-embed.css ===== */
 /* Анкета: короткий блок с кнопкой на Google-форму, не на весь экран */
 @font-face{font-family:"MRMont";src:url("fonts/montserrat-v18.ttf") format("truetype");font-weight:100 900;font-display:swap}
@@ -140,7 +143,7 @@
 
 /* ===== closing-embed.css ===== */
 /* Финал: короче, небо срезано, контакт слева рядом с головами, без линии сверху */
-.mock-closing.closing-editorial{min-height:0;height:clamp(470px,62svh,560px)}
+.mock-closing.closing-editorial{min-height:0;height:clamp(540px,70svh,640px)}
 .mock-closing.closing-editorial > img{
   animation:none !important;
   object-position:62% 100%;
@@ -170,6 +173,9 @@
   background:rgba(0,0,0,.6)}
 .mock-closing .editorial-footer button,
 .mock-closing .editorial-footer a{border-bottom:0 !important;min-height:34px}
+
+/* второй организатор ближе к первому, чем первый к тексту сверху */
+.mock-closing .closing-contact .organizer-name.org-2{margin-top:clamp(18px,2.6svh,24px) !important}
 
 /* ===== envelope-embed.css ===== */
 /* Конверт: дата крупнее и ниже, без подчёркивания у кнопки */
