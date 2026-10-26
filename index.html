@@ -13,21 +13,40 @@
   <meta property="og:image" content="фотосессия-предложение/город/diana starry-0021.jpg">
   <meta property="og:type" content="website">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'%3E%3Crect width='60' height='60' rx='30' fill='%23111110'/%3E%3Ctext x='30' y='40' text-anchor='middle' font-family='serif' font-size='30' fill='%23f4f1eb'%3E15%3C/text%3E%3C/svg%3E">
-  <link rel="preload" href="fonts/montserrat-v18.ttf" as="font" type="font/ttf" crossorigin>
-  <link rel="preload" href="fonts/bikham-cyr-user-preview.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="fonts/montserrat-v18.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/bikham-cyr-user-preview.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="images/story-motion-v6.jpg" as="image" fetchpriority="high">
-  <link rel="stylesheet" href="styles.css?v=44">
-  <link rel="stylesheet" href="envelope.css?v=41">
+  <link rel="preload" href="images/envelope-topdown-v17.webp" as="image" type="image/webp" fetchpriority="high">
+  <link rel="preload" href="fonts/cormorant-garamond-italic-v18.woff2" as="font" type="font/woff2" crossorigin>
+  <script>
+/* Высоты от экрана считаем при открытии и больше не трогаем: шапка браузера или Телеграма
+   прячется при прокрутке, и без этого блоки меняют высоту, а страница прыгает. Пересчёт — при повороте. */
+(function(){var r=document.documentElement,w=0,still=false;
+function unit(n){var d=document.createElement('div');d.style.cssText='position:absolute;top:0;left:0;width:0;visibility:hidden;height:100'+n;
+r.appendChild(d);var h=d.getBoundingClientRect().height/100;r.removeChild(d);return h}
+function set(){if(still&&innerWidth===w)return;w=innerWidth;var vh=unit('vh');
+['vh','svh','dvh'].forEach(function(n){r.style.setProperty('--'+n,(unit(n)||vh)+'px')})}
+set();addEventListener('resize',set);
+addEventListener('scroll',function(){if(matchMedia('(pointer: coarse)').matches)still=true},{passive:true});
+r.classList.add('env-loading');var shown=false;function show(){if(!shown){shown=true;r.classList.remove('env-loading')}}
+setTimeout(show,8000);
+document.addEventListener('DOMContentLoaded',function(){var i=document.querySelector('.envelope-still');
+var img=new Promise(function(ok){if(!i||i.complete)ok();else{i.addEventListener('load',ok);i.addEventListener('error',ok)}});
+var font=document.fonts&&document.fonts.load?document.fonts.load('italic 400 32px "Cormorant Garamond"').catch(function(){}):0;
+Promise.all([img,font]).then(show)})})();
+</script>
+  <link rel="stylesheet" href="styles.css?v=c68b2f61">
+  <link rel="stylesheet" href="envelope.css?v=15464753">
   <script>if(new URLSearchParams(location.search).has('zags'))document.documentElement.dataset.mode='zags';</script>
   <noscript><style>.envelope-gate{display:none!important}.site-shell{visibility:visible!important}[data-reveal]{opacity:1!important}</style></noscript>
-  <link rel="stylesheet" href="final.css?v=b89409b1">
+  <link rel="stylesheet" href="final.css?v=05e69743">
   </head>
 <body>
   <div class="envelope-gate" id="envelope" role="dialog" aria-modal="true" aria-label="Свадебное приглашение Михаила и Софьи">
     <img class="envelope-backdrop" src="images/story-motion-v6.jpg" alt="" width="1707" height="2560" aria-hidden="true">
     <div class="envelope-backdrop-shade" aria-hidden="true"></div>
     <button class="envelope-object" id="envelope-open" type="button" aria-label="Открыть свадебное приглашение Михаила и Софьи">
-      <img class="envelope-still" src="images/envelope-topdown-v17.png" alt="" width="1024" height="1536" aria-hidden="true">
+      <picture><source srcset="images/envelope-topdown-v17.webp" type="image/webp"><img class="envelope-still" src="images/envelope-topdown-v17.png" alt="" width="1122" height="1402" aria-hidden="true"></picture>
       <span class="envelope-live-copy" aria-hidden="true">
         <strong>Save the date</strong>
         <time datetime="2027-01-15">15 · 01 · 2027</time>
@@ -43,7 +62,7 @@
   <div class="site-shell" id="site-shell">
     <a class="skip-link" href="#main">Перейти к приглашению</a>
     <header class="fashion-hero" id="top" tabindex="-1">
-      <img class="fashion-hero-media" src="фотосессия-предложение/город/diana starry-0021.jpg" alt="Михаил и Софья смотрят друг на друга" width="1707" height="2560" fetchpriority="high">
+      <img class="fashion-hero-media" src="фотосессия-предложение/город/diana starry-0021.jpg" alt="Михаил и Софья смотрят друг на друга" width="1707" height="2560">
       <div class="fashion-hero-shade" aria-hidden="true"></div>
       <div class="fashion-hero-grain" aria-hidden="true"></div>
       <div class="fashion-nav" aria-label="Обложка приглашения">
@@ -86,7 +105,7 @@
 
       <section class="mock-program" id="day" aria-labelledby="day-title">
     <div class="mp-bg">
-      <img src="фотосессия-предложение/город/diana starry-0030.jpg" alt="">
+      <img src="фотосессия-предложение/город/diana starry-0030.jpg" alt="" loading="lazy" decoding="async">
       <div class="mp-veil"></div>
     </div>
     <div class="mp-page">
@@ -107,7 +126,7 @@
         <p class="mp-name">Особняк Путилова</p>
         <p class="mp-addr">проспект Динамо, 2Б</p>
         <a class="mp-link" href="https://yandex.ru/maps/?text=Санкт-Петербург, проспект Динамо, 2Б, особняк Путилова" target="_blank" rel="noopener">Открыть в картах</a>
-        <img class="mp-manor" src="images/putilov-lines-v49.png" alt="Особняк Путилова, зарисовка">
+        <img class="mp-manor" src="images/putilov-lines-v49.png" alt="Особняк Путилова, зарисовка" width="480" height="387" loading="lazy" decoding="async">
       </div>
     </div>
       </section>
@@ -156,7 +175,7 @@
     </main>
   </div>
 
-  <script src="envelope.js?v=24.0"></script>
-  <script src="script.js?v=24.0"></script>
+  <script src="envelope.js?v=fa4cbbf8"></script>
+  <script src="script.js?v=27acefdf"></script>
 </body>
 </html>

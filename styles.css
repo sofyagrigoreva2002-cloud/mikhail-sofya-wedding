@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Anticva";
-  src: url("fonts/anticva-v24.otf") format("opentype");
+  src: url("fonts/anticva-v24.woff2") format("woff2");
   font-style: normal;
   font-weight: 400;
   font-display: swap;
@@ -8,7 +8,7 @@
 
 @font-face {
   font-family: "Cormorant Garamond";
-  src: url("fonts/cormorant-garamond-v18.ttf") format("truetype");
+  src: url("fonts/cormorant-garamond-v18.woff2") format("woff2");
   font-style: normal;
   font-weight: 400;
   font-display: swap;
@@ -16,7 +16,7 @@
 
 @font-face {
   font-family: "Cormorant Garamond";
-  src: url("fonts/cormorant-garamond-italic-v18.ttf") format("truetype");
+  src: url("fonts/cormorant-garamond-italic-v18.woff2") format("woff2");
   font-style: italic;
   font-weight: 400;
   font-display: swap;
@@ -24,7 +24,7 @@
 
 @font-face {
   font-family: "Great Vibes";
-  src: url("fonts/great-vibes-v24.ttf") format("truetype");
+  src: url("fonts/great-vibes-v24.woff2") format("woff2");
   font-style: normal;
   font-weight: 400;
   font-display: swap;
@@ -32,7 +32,7 @@
 
 @font-face {
   font-family: "Golos Text";
-  src: url("fonts/v22/golos-text-variable.ttf") format("truetype");
+  src: url("fonts/v22/golos-text-variable.woff2") format("woff2");
   font-style: normal;
   font-weight: 400 900;
   font-display: swap;
@@ -40,7 +40,7 @@
 
 @font-face {
   font-family: "Bikham Cyr Script";
-  src: url("fonts/bikham-cyr-user-preview.ttf") format("truetype");
+  src: url("fonts/bikham-cyr-user-preview.woff2") format("woff2");
   font-style: normal;
   font-weight: 400;
   font-display: swap;
@@ -48,7 +48,7 @@
 
 @font-face {
   font-family: "Florisel Script";
-  src: url("fonts/florisel-script-v7.ttf") format("truetype");
+  src: url("fonts/florisel-script-v7.woff2") format("woff2");
   font-style: normal;
   font-weight: 100;
   font-display: swap;
@@ -56,7 +56,7 @@
 
 @font-face {
   font-family: "Montserrat Thin";
-  src: url("fonts/montserrat-v18.ttf") format("truetype");
+  src: url("fonts/montserrat-v18.woff2") format("woff2");
   font-style: normal;
   font-weight: 100;
   font-display: swap;
@@ -64,7 +64,7 @@
 
 @font-face {
   font-family: "Montserrat";
-  src: url("fonts/montserrat-v18.ttf") format("truetype");
+  src: url("fonts/montserrat-v18.woff2") format("woff2");
   font-style: normal;
   font-weight: 400;
   font-display: swap;
@@ -247,7 +247,7 @@ html[data-mode="zags"] .schedule-list .only-zags {
 
 .fashion-hero {
   position: relative;
-  min-height: 100svh;
+  min-height: calc(var(--svh,1svh)*100);
   overflow: hidden;
   background: var(--ink);
   color: var(--white);
@@ -335,7 +335,7 @@ html[data-mode="zags"] .schedule-list .only-zags {
   display: block;
   width: 100%;
   min-height: clamp(190px, 25vw, 360px);
-  margin: clamp(10px, 1.8vh, 26px) 0 clamp(4px, 1vh, 14px);
+  margin: clamp(10px, calc(var(--vh,1vh)*1.8), 26px) 0 clamp(4px, calc(var(--vh,1vh)*1), 14px);
   font-weight: 400;
   line-height: 1;
 }
@@ -459,7 +459,7 @@ html[data-mode="zags"] .schedule-list .only-zags {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: clamp(70px, 10vh, 120px) 0 42px;
+  margin: clamp(70px, calc(var(--vh,1vh)*10), 120px) 0 42px;
   font-family: var(--display);
   font-size: clamp(64px, 6.9vw, 110px);
   font-weight: 400;
@@ -525,7 +525,7 @@ html[data-mode="zags"] .schedule-list .only-zags {
 
 .countdown-editorial {
   position: relative;
-  min-height: min(86svh, 920px);
+  min-height: min(calc(var(--svh,1svh)*86), 920px);
   overflow: hidden;
   background: var(--ink);
   color: var(--white);
@@ -554,7 +554,7 @@ html[data-mode="zags"] .schedule-list .only-zags {
 
 .countdown-copy {
   display: flex;
-  min-height: min(86svh, 920px);
+  min-height: min(calc(var(--svh,1svh)*86), 920px);
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -563,7 +563,7 @@ html[data-mode="zags"] .schedule-list .only-zags {
 }
 
 .countdown-copy > p {
-  margin-bottom: clamp(34px, 6vh, 72px);
+  margin-bottom: clamp(34px, calc(var(--vh,1vh)*6), 72px);
   font-family: var(--script);
   font-size: clamp(52px, 6vw, 94px);
   font-style: normal;
@@ -786,7 +786,7 @@ html[data-mode="zags"] .venue-list article:last-child {
   position: relative;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: minmax(500px, 78svh);
+  grid-template-rows: minmax(500px, calc(var(--svh,1svh)*78));
   overflow: hidden;
   background: var(--ink);
   color: var(--white);
@@ -1175,7 +1175,7 @@ html[data-mode="zags"] .venue-list article:last-child {
 
 .closing-editorial {
   position: relative;
-  min-height: 72svh;
+  min-height: calc(var(--svh,1svh)*72);
   overflow: hidden;
   background: var(--ink);
   color: var(--white);
@@ -1204,7 +1204,7 @@ html[data-mode="zags"] .venue-list article:last-child {
 
 .closing-copy {
   display: flex;
-  min-height: 100svh;
+  min-height: calc(var(--svh,1svh)*100);
   flex-direction: column;
   justify-content: space-between;
   padding: 76px var(--pad) 150px;
@@ -1384,7 +1384,7 @@ html[data-mode="zags"] .venue-list article:last-child {
   }
 
   .invitation-photo {
-    min-height: 72svh;
+    min-height: calc(var(--svh,1svh)*72);
   }
 
   .invitation-photo img {
@@ -1428,7 +1428,7 @@ html[data-mode="zags"] .venue-list article:last-child {
 
   .countdown-editorial,
   .countdown-copy {
-    min-height: 70svh;
+    min-height: calc(var(--svh,1svh)*70);
   }
 
   .countdown-editorial > img {
@@ -1527,7 +1527,7 @@ html[data-mode="zags"] .venue-list article:last-child {
 
   .story-collage {
     grid-template-columns: 1fr;
-    grid-template-rows: 76svh;
+    grid-template-rows: calc(var(--svh,1svh)*76);
   }
 
   .story-collage-copy {
@@ -1584,7 +1584,7 @@ html[data-mode="zags"] .venue-list article:last-child {
   }
 
   .reply-visual {
-    min-height: 58svh;
+    min-height: calc(var(--svh,1svh)*58);
   }
 
   .reply-visual img {
@@ -1773,7 +1773,7 @@ html[data-mode="zags"] .venue-list article:last-child {
 .fashion-hero-title {
   top: auto;
   right: 0;
-  bottom: clamp(84px, 10svh, 112px);
+  bottom: clamp(84px, calc(var(--svh,1svh)*10), 112px);
   left: 0;
   display: grid;
   justify-items: center;
@@ -1867,7 +1867,7 @@ html[data-mode="zags"] .venue-list article:last-child {
 .invitation-copy h2 {
   display: block;
   width: 100%;
-  margin: clamp(44px, 6vh, 76px) 0 0;
+  margin: clamp(44px, calc(var(--vh,1vh)*6), 76px) 0 0;
   font-family: "Montserrat Thin", Arial, sans-serif;
   font-size: clamp(49px, 5.3vw, 83px);
   font-weight: 100;
@@ -1931,7 +1931,7 @@ html[data-mode="zags"] .venue-list article:last-child {
   .fashion-hero-title {
     top: auto;
     right: 0;
-    bottom: clamp(110px, 15svh, 150px);
+    bottom: clamp(110px, calc(var(--svh,1svh)*15), 150px);
     left: 0;
     width: calc(100% - 24px);
   }
@@ -1947,7 +1947,7 @@ html[data-mode="zags"] .venue-list article:last-child {
     font-size: clamp(18px, 4.8vw, 23px);
   }
   .fashion-scroll { right: 50%; bottom: 20px; font-size: 10px; }
-  .invitation-photo { min-height: 68svh; }
+  .invitation-photo { min-height: calc(var(--svh,1svh)*68); }
   .invitation-photo img { object-position: 50% 14%; }
   .invitation-copy { min-height: 680px; padding: 82px 24px 68px; }
   .invitation-copy::before { top: 42px; }
@@ -2029,7 +2029,7 @@ html[data-mode="zags"] .venue-list article:last-child {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: clamp(66px, 9vh, 110px) 0 0;
+  margin: clamp(66px, calc(var(--vh,1vh)*9), 110px) 0 0;
   font-family: "Montserrat Thin", Arial, sans-serif;
   font-size: clamp(48px, 4.7vw, 75px);
   font-weight: 100;
@@ -2069,7 +2069,7 @@ html[data-mode="zags"] .venue-list article:last-child {
 }
 
 .countdown-copy > p {
-  margin-bottom: clamp(32px, 5vh, 62px);
+  margin-bottom: clamp(32px, calc(var(--vh,1vh)*5), 62px);
   font-family: "Montserrat", Arial, sans-serif;
   font-size: clamp(15px, 1.3vw, 20px);
   font-weight: 400;
@@ -2164,7 +2164,7 @@ html[data-mode="zags"] .venue-list article:last-child {
   }
   .hero-connector { font-size: 12px; }
   .invitation-editorial { display: block; }
-  .invitation-photo { min-height: 65svh; }
+  .invitation-photo { min-height: calc(var(--svh,1svh)*65); }
   .invitation-photo img { object-position: 50% 43%; }
   .invitation-copy {
     min-height: 680px;
@@ -2238,9 +2238,9 @@ html[data-mode="zags"] .venue-list article:last-child {
   margin-top: clamp(17px, 1.6vw, 23px);
   font-size: clamp(13px, 1.08vw, 16px);
 }
-.fashion-hero-title { bottom: clamp(63px, 8svh, 87px); }
+.fashion-hero-title { bottom: clamp(63px, calc(var(--svh,1svh)*8), 87px); }
 .countdown-editorial,
-.countdown-copy { min-height: min(64svh, 650px); }
+.countdown-copy { min-height: min(calc(var(--svh,1svh)*64), 650px); }
 .countdown-editorial > img {
   object-position: 50% 22%;
   filter: grayscale(1) contrast(1.02) brightness(0.8);
@@ -2251,7 +2251,7 @@ html[data-mode="zags"] .venue-list article:last-child {
 .countdown-copy {
   justify-content: flex-end;
   padding-top: 42px;
-  padding-bottom: clamp(28px, 4vh, 46px);
+  padding-bottom: clamp(28px, calc(var(--vh,1vh)*4), 46px);
 }
 .countdown-copy > p {
   margin-bottom: 26px;
@@ -2268,7 +2268,7 @@ html[data-mode="zags"] .venue-list article:last-child {
 
 @media (max-width: 760px) {
   .fashion-hero-media { object-position: 50% 50%; }
-  .fashion-hero-title { bottom: clamp(95px, 12svh, 120px); }
+  .fashion-hero-title { bottom: clamp(95px, calc(var(--svh,1svh)*12), 120px); }
   .fashion-hero-title h1 {
     column-gap: clamp(10px, 3.1vw, 21px);
     width: min(100%, 650px);
@@ -2277,7 +2277,7 @@ html[data-mode="zags"] .venue-list article:last-child {
   .fashion-hero-title .hero-connector { font-size: clamp(11px, 3vw, 14px); transform: translate(6px, -0.12em); }
   .fashion-hero-title .hero-date { margin-top: 17px; font-size: clamp(12px, 3.3vw, 14px); }
   .countdown-editorial,
-  .countdown-copy { min-height: min(59svh, 550px); }
+  .countdown-copy { min-height: min(calc(var(--svh,1svh)*59), 550px); }
   .countdown-editorial > img { object-position: 50% 5%; }
   .countdown-copy { padding: 38px 12px 44px; }
   .countdown-copy > p { margin-bottom: 18px; font-size: 13px; letter-spacing: 0.17em; }
@@ -2649,7 +2649,7 @@ html[data-mode="zags"] .schedule-editorial--program .venue-list .only-zags {
   /* --- телефон и узкое окно: лист компактнее, чтобы пара оставалась видна --- */
   --photo-focus:58% 22%;
   --sheet-slack:8px;
-  --sheet-h:min(92vw, 54vh);
+  --sheet-h:min(92vw, calc(var(--vh,1vh)*54));
   --sheet-w:min(76vw, 300px);
   --sheet-pad:clamp(18px, 4.8vw, 34px);
   --air-right:7vw;
@@ -2657,8 +2657,8 @@ html[data-mode="zags"] .schedule-editorial--program .venue-list .only-zags {
 
   position:relative;
   width:100%;
-  height:100vh;
-  height:100dvh;
+  height:calc(var(--vh,1vh)*100);
+  height:calc(var(--dvh,1dvh)*100);
   overflow:hidden;
   display:grid;
   grid-template-columns:1fr var(--sheet-w) var(--air-right);
@@ -2715,7 +2715,7 @@ html[data-mode="zags"] .schedule-editorial--program .venue-list .only-zags {
   margin:0;
   font-family:var(--antiqua);
   font-weight:300;
-  font-size:clamp(24px, min(8.4vw, 4.6vh), 36px);
+  font-size:clamp(24px, min(8.4vw, calc(var(--vh,1vh)*4.6)), 36px);
   line-height:.98;
   letter-spacing:.012em;
   color:var(--graphite);
@@ -2731,7 +2731,7 @@ html[data-mode="zags"] .schedule-editorial--program .venue-list .only-zags {
   margin:0;
   font-family:var(--antiqua);
   font-weight:400;
-  font-size:clamp(14px, min(4.4vw, 2.4vh), 19px);
+  font-size:clamp(14px, min(4.4vw, calc(var(--vh,1vh)*2.4)), 19px);
   line-height:1.6;
   letter-spacing:.005em;
   color:var(--graphite);
@@ -2803,18 +2803,18 @@ html[data-mode="zags"] .schedule-editorial--program .venue-list .only-zags {
   .letter-scene{
     grid-template-rows:1fr var(--sheet-h) var(--air-ratio);
     --photo-focus:44% 34%;
-    --sheet-h:clamp(340px, 66vh, 620px);
+    --sheet-h:clamp(340px, calc(var(--vh,1vh)*66), 620px);
     --sheet-w:calc(var(--sheet-h) / 1.42);
     --sheet-pad:clamp(32px, 3.1vw, 46px);
     --air-right:clamp(40px, 5vw, 150px);
     --air-ratio:.34fr;
     --photo-h:168vw;
-    --photo-minh:100vh;
+    --photo-minh:calc(var(--vh,1vh)*100);
     --photo-x:0%;
-    --photo-y:min(0px, calc(100vh - 95.9vw));
+    --photo-y:min(0px, calc(calc(var(--vh,1vh)*100) - 95.9vw));
   }
-  .letter-scene .sheet__title{font-size:clamp(34px, min(3.2vw, 5.4vh), 48px)}
-  .letter-scene .sheet__text{font-size:clamp(16px, min(1.6vw, 2.7vh), 23px)}
+  .letter-scene .sheet__title{font-size:clamp(34px, min(3.2vw, calc(var(--vh,1vh)*5.4)), 48px)}
+  .letter-scene .sheet__text{font-size:clamp(16px, min(1.6vw, calc(var(--vh,1vh)*2.7)), 23px)}
   .letter-scene .sheet__rule{margin:clamp(22px,2vw,28px) 0 clamp(18px,1.7vw,24px)}
   .letter-scene .sheet__from{font-size:min(26px, 8.6cqw)}
   .letter-scene .rail span{font-size:12.5px;letter-spacing:.16em}
