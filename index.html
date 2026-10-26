@@ -28,12 +28,7 @@ function set(){if(still&&innerWidth===w)return;w=innerWidth;var vh=unit('vh');
 ['vh','svh','dvh'].forEach(function(n){r.style.setProperty('--'+n,(unit(n)||vh)+'px')})}
 set();addEventListener('resize',set);
 addEventListener('scroll',function(){if(matchMedia('(pointer: coarse)').matches)still=true},{passive:true});
-r.classList.add('env-loading');var shown=false;function show(){if(!shown){shown=true;r.classList.remove('env-loading')}}
-setTimeout(show,8000);
-document.addEventListener('DOMContentLoaded',function(){var i=document.querySelector('.envelope-still');
-var img=new Promise(function(ok){if(!i||i.complete)ok();else{i.addEventListener('load',ok);i.addEventListener('error',ok)}});
-var font=document.fonts&&document.fonts.load?document.fonts.load('italic 400 32px "Cormorant Garamond"').catch(function(){}):0;
-Promise.all([img,font]).then(show)})})();
+r.classList.add('env-loading');setTimeout(function(){r.classList.remove('env-loading')},8000)})();
 </script>
   <link rel="stylesheet" href="styles.css?v=c68b2f61">
   <link rel="stylesheet" href="envelope.css?v=15464753">
@@ -52,6 +47,10 @@ Promise.all([img,font]).then(show)})})();
         <time datetime="2027-01-15">15 · 01 · 2027</time>
       </span>
     </button>
+    <script>(function(){var i=document.querySelector('.envelope-still');
+var img=new Promise(function(ok){if(!i||i.complete)ok();else{i.addEventListener('load',ok);i.addEventListener('error',ok)}});
+var font=document.fonts&&document.fonts.load?document.fonts.load('italic 400 32px "Cormorant Garamond"').catch(function(){}):0;
+Promise.all([img,font]).then(function(){document.documentElement.classList.remove('env-loading')})})();</script>
     <div class="envelope-caption">
       <p class="envelope-signature">MIKHAIL&amp;SOFYA</p>
       <button class="envelope-action" id="envelope-open-text" type="button">Открыть приглашение на свадьбу</button>
@@ -62,7 +61,7 @@ Promise.all([img,font]).then(show)})})();
   <div class="site-shell" id="site-shell">
     <a class="skip-link" href="#main">Перейти к приглашению</a>
     <header class="fashion-hero" id="top" tabindex="-1">
-      <img class="fashion-hero-media" src="фотосессия-предложение/город/diana starry-0021.jpg" alt="Михаил и Софья смотрят друг на друга" width="1707" height="2560">
+      <img class="fashion-hero-media" src="фотосессия-предложение/город/diana starry-0021.jpg" alt="Михаил и Софья смотрят друг на друга" width="1707" height="2560" fetchpriority="low">
       <div class="fashion-hero-shade" aria-hidden="true"></div>
       <div class="fashion-hero-grain" aria-hidden="true"></div>
       <div class="fashion-nav" aria-label="Обложка приглашения">
